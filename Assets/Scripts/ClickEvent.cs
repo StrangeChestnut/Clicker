@@ -11,7 +11,7 @@ public class ClickEvent : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
     public HitEvent DoHit;
-
+    
     public void Stop()
     {
         enabled = false;
