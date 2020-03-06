@@ -654,6 +654,13 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5451863065650826730, guid: 3e29bb5f46a0f5e409d7bcd689173040,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Exit
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 5451863066370995565, guid: 3e29bb5f46a0f5e409d7bcd689173040,
         type: 3}
       propertyPath: m_Name
