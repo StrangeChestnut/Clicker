@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ClickListener : MonoBehaviour
+public class ClickHandler : MonoBehaviour
 {
     private void Handle(RaycastHit2D hit2D)
     {

@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1182607131209693697}
   - component: {fileID: 1182607131209693699}
+  - component: {fileID: 3394629867256364755}
   - component: {fileID: 1182607131209693696}
   - component: {fileID: 9096241777886267378}
   - component: {fileID: 7863161627164916517}
   - component: {fileID: 524459798470352916}
-  - component: {fileID: 7453755535100905033}
-  - component: {fileID: 3394629867256364755}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -87,6 +86,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &3394629867256364755
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182607131209693702}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.1
+  m_GravityScale: 0.2
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 5
 --- !u!58 &1182607131209693696
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -144,37 +164,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97bf0fd7d104b668e64372ee9db0091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7453755535100905033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182607131209693702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e377d02d9ab7ab341856ad6bdab5bc68, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: {x: 0, y: -4}
---- !u!50 &3394629867256364755
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1182607131209693702}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0.2
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 3

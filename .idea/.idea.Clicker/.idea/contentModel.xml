@@ -8,7 +8,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="ClickEvent.cs" t="Include" />
-          <e p="ClickListener.cs" t="Include" />
+          <e p="ClickHandler.cs" t="Include" />
           <e p="Destroyer.cs" t="Include" />
           <e p="DestroyHitAction.cs" t="Include" />
           <e p="Gameover.cs" t="Include" />

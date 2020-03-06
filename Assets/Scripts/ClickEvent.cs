@@ -11,18 +11,15 @@ public class ClickEvent : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
     public HitEvent DoHit;
-    private bool _isBlocked = false;
-
-    private bool _isClick;
 
     public void Stop()
     {
-        _isBlocked = true;
+        enabled = false;
     }
 
     void Update()
     {
-        if (!_isBlocked && Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
             DoHit?.Invoke(Physics2D.Raycast(_camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero));
     }
 }

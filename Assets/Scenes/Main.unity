@@ -217,7 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839a9ff77514434782d2876b7eab583b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameover: {fileID: 0}
   Prefab: {fileID: 1182607131209693702, guid: 98fa764e70dfb634a842a65f8b4ed919, type: 3}
   Interval: 1
   From: -7

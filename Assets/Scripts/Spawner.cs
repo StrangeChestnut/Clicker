@@ -12,16 +12,14 @@ public class Spawner : MonoBehaviour
 	public float To;
 
 	private float _timer;
-	private bool _isDisabled = false;
 	
 	public void StopSpawn()
 	{
-		_isDisabled = true;
+		enabled = false;
 	}
 
 	private void Update()
 	{
-		if (_isDisabled) return;
 		_timer -= Time.fixedDeltaTime;
 
 		if (_timer > 0)
