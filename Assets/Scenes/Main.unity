@@ -217,10 +217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839a9ff77514434782d2876b7eab583b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Prefab: {fileID: 1182607131209693702, guid: 98fa764e70dfb634a842a65f8b4ed919, type: 3}
-  Interval: 1
-  From: -7
-  To: 7
+  _prefab: {fileID: 1182607131209693702, guid: 98fa764e70dfb634a842a65f8b4ed919, type: 3}
+  _spawnInterval: 1.5
+  _fromPosition: -7
+  _toPosition: 7
 --- !u!61 &407503693
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -771,6 +771,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5451863066370995571, guid: 3e29bb5f46a0f5e409d7bcd689173040,
+        type: 3}
+      propertyPath: scoreScriptableObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 6206e11001e3f604ba2f87c4f46ad967,
+        type: 2}
     - target: {fileID: 5451863066836226236, guid: 3e29bb5f46a0f5e409d7bcd689173040,
         type: 3}
       propertyPath: m_AnchorMin.y

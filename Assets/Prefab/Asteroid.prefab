@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be4a783b5f043409349ce0aa504d0d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 11400000, guid: 6206e11001e3f604ba2f87c4f46ad967, type: 2}
+  _score: {fileID: 11400000, guid: 6206e11001e3f604ba2f87c4f46ad967, type: 2}
   _collider: {fileID: 1182607131209693696}
 --- !u!114 &524459798470352916
 MonoBehaviour:
