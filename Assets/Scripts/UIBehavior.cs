@@ -4,17 +4,17 @@ using UnityEngine.UI;
 public class UIBehavior : MonoBehaviour
 {
     [SerializeField] private GameOverWindow _gameOverWindow;
-    [SerializeField] private Score _score;
+    [SerializeField] private ScoreScriptableObject scoreScriptableObject;
     [SerializeField] private Text _scoreText;
 
     private void Awake()
     {
-        _score.UpdateScore += UpdateScore;
+        scoreScriptableObject.UpdateScore += UpdateScore;
     }
     
     private void OnEnable()
     {
-        UpdateScore(_score.Count);
+        UpdateScore(scoreScriptableObject.Count);
     }
 
 

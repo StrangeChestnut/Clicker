@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Score : ScriptableObject
+public class ScoreScriptableObject : ScriptableObject
 {
     [SerializeField] private int _count;
     [SerializeField] private bool _resetOnNewGame = true;
@@ -31,7 +31,7 @@ public class Score : ScriptableObject
     [MenuItem("Assets/Create/Score")]
     public static void CreateMyAsset()
     {
-        Score asset = CreateInstance<Score>();
+        ScoreScriptableObject asset = CreateInstance<ScoreScriptableObject>();
         AssetDatabase.CreateAsset(asset, "Assets/Counters/Score.asset");
         AssetDatabase.SaveAssets();
         EditorUtility.FocusProjectWindow();

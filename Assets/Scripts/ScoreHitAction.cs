@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreHitAction : HitAction
 {
-    [SerializeField] private Score score;
+    [SerializeField] private ScoreScriptableObject _score;
     [SerializeField] private CircleCollider2D _collider;
 
     public override void DoExecute(RaycastHit2D hit2D)
@@ -17,7 +17,7 @@ public class ScoreHitAction : HitAction
         var difference = Vector2.Distance(from, to);
         var radius = _collider.radius;
         
-        score.AddValue(GetValue((int)(100 * (radius - difference) / radius)));
+        _score.AddValue(GetValue((int)(100 * (radius - difference) / radius)));
     }
 
     private int GetValue(int diff)
