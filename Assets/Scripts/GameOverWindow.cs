@@ -1,11 +1,14 @@
-﻿using UnityEditor;
+﻿using System;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameOverWindow : MonoBehaviour
 {
     [SerializeField] private Text _scoreText;
+    public event Action RestartEvent;
 
     public void Show()
     {
@@ -17,8 +20,8 @@ public class GameOverWindow : MonoBehaviour
         _scoreText.text = $"Total score: {score}";
     }
 
-    public void OnQuitButtonClick()
+    public void RestartButtonClick()
     {
-        SceneManager.LoadScene("Main", LoadSceneMode.Single);
+        RestartEvent?.Invoke();
     }
 }
