@@ -4,11 +4,11 @@ using UnityEngine.Events;
 
 public class Gameover : MonoBehaviour
 {
-    public UnityEvent StopGame;
+    public event Action StopGame;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         StopGame?.Invoke();
-        Destroy(this);
+        enabled = false;
     }
 }

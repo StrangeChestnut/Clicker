@@ -12,7 +12,7 @@ public class ClickEvent : MonoBehaviour
     [SerializeField] private Camera _camera;
     public HitEvent DoHit;
     
-    public void Stop()
+    public void Disable()
     {
         enabled = false;
     }

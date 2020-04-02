@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreHitAction : HitAction
 {
-    [SerializeField] private ScoreScriptableObject _score;
+    [SerializeField] private GameController _score;
     [SerializeField] private CircleCollider2D _collider;
 
     public override void DoExecute(RaycastHit2D hit2D)
