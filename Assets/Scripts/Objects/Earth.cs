@@ -2,13 +2,13 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Gameover : MonoBehaviour
+public class Earth : MonoBehaviour
 {
-    public event Action StopGame;
+    [SerializeField] private GameController _game;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        StopGame?.Invoke();
+        _game.StopGame();
         enabled = false;
     }
 }

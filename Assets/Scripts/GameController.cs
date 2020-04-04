@@ -11,14 +11,20 @@ public class GameController : ScriptableObject
     public int Count => _count;
 
     public event Action<int> UpdateScore;
-    
-    private void OnEnable()
+    public event Action GameOver;
+
+    public void StartGame()
     {
         if (_resetOnNewGame)
         {
             _count = 0;
         }
         UpdateScore?.Invoke(_count);
+    }
+    
+    public void StopGame()
+    {
+        GameOver?.Invoke();
     }
 
     public void AddValue(int count)
