@@ -19,7 +19,6 @@ namespace Controllers
             view.hudWindow.Open(_hudController);
             _ui.Game.StopEvent += _ui.CloseGameWindow;
             _ui.Game.StopEvent += _ui.OpenGameOver;
-            _ui.Game.StartGame();
         }
 
         public void OnClose(GameWindow view)

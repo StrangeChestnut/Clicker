@@ -19,9 +19,13 @@ public class GameController : MonoBehaviour
 
     public event Action StartEvent;
     public event Action StopEvent;
+
+    private string _nickname;
     
-    public void StartGame()
+    public void StartGame(string nickname)
     {
+        _nickname = nickname;
+        
         if (_resetOnNewGame)
         {
             _score.Value = 0;
@@ -29,6 +33,11 @@ public class GameController : MonoBehaviour
 
         _score.Update();
         StartEvent?.Invoke();
+    }
+    
+    public void RestartGame()
+    {
+        StartGame(_nickname);
     }
     
     public void StopGame()

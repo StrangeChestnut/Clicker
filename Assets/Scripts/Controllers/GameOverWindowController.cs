@@ -19,6 +19,9 @@ namespace Views
             view.MenuEvent += _ui.CloseGameOverWindow;
             view.RestartEvent += _ui.OpenGame;
             view.MenuEvent += _ui.OpenMenu;
+            
+            view.RestartEvent += OnRestart;
+
         }
 
         public void OnClose(GameOverWindow view)
@@ -27,6 +30,14 @@ namespace Views
             view.MenuEvent -= _ui.CloseGameOverWindow;
             view.RestartEvent -= _ui.OpenGame;
             view.MenuEvent -= _ui.OpenMenu;
+            
+            view.RestartEvent -= OnRestart;
+
+        }
+
+        private void OnRestart()
+        {
+            _ui.Game.RestartGame();
         }
     }
 }
