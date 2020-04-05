@@ -17,8 +17,9 @@ public class ScoreHitAction : HitAction
         
         var difference = Vector2.Distance(from, to);
         var radius = _collider.radius;
-        
-        _score.Value += GetValue((int)(100 * (radius - difference) / radius));
+
+        var x = _score.Value;
+        _score.Value = x + GetValue((int)(100 * (radius - difference) / radius));
     }
 
     private int GetValue(int diff)

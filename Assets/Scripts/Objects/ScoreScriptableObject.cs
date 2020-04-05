@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
@@ -6,22 +7,35 @@ namespace Objects
 { 
     public class ScoreScriptableObject : ScriptableObject
     {
-        private int _value;
+        [SerializeField] private string _bestPlayer;
+        [SerializeField] private int _bestScore;
+        
+        [SerializeField] private int _currentScore;
+        
         public int Value
         {
-            get => _value;
+            get => _currentScore;
 
             set
             {
-                _value = value;
+                _currentScore = value;
                 Update();
             }
         }
         public event Action<int> UpdateScore;
-        
+
         public void Update()
         {
-            UpdateScore?.Invoke(_value);        
+            UpdateScore?.Invoke(_currentScore);        
+        }
+        
+        public void TrySaveBest(string nickname)
+        {
+            if (_currentScore > _bestScore)
+            {
+                _bestScore = _currentScore;
+                _bestPlayer = nickname;
+            }
         }
         
 

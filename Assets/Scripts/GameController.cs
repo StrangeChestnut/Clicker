@@ -20,28 +20,27 @@ public class GameController : MonoBehaviour
     public event Action StartEvent;
     public event Action StopEvent;
 
-    private string _nickname;
+    private string _player;
     
     public void StartGame(string nickname)
     {
-        _nickname = nickname;
+        _player = nickname;
         
         if (_resetOnNewGame)
         {
             _score.Value = 0;
         }
-
-        _score.Update();
         StartEvent?.Invoke();
     }
     
     public void RestartGame()
     {
-        StartGame(_nickname);
+        StartGame(_player);
     }
     
     public void StopGame()
     {
+        _score.TrySaveBest(_player);
         StopEvent?.Invoke();
     }
 }
