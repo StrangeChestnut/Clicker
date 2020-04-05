@@ -14,6 +14,9 @@ namespace Controllers
     
         public void OnOpen(HudWindow view)
         {
+            view.UpdateScore(0);
+            view.UpdateTimer(_ui.Game.Duration);
+            
             _ui.Game.Score.UpdateScore += view.UpdateScore;
             _ui.Game.Timer.UpdateTimer += view.UpdateTimer;
         }

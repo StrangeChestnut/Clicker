@@ -8,7 +8,6 @@ namespace Views
     {
         [SerializeField] private Text _scoreText;
         public event Action RestartEvent;
-        public event Action MenuEvent;
 
         public void SetScore(int score)
         {
@@ -18,11 +17,6 @@ namespace Views
         public void Restart()
         {
             RestartEvent?.Invoke();
-        }
-    
-        public void Menu()
-        {
-            MenuEvent?.Invoke();
         }
     }
 }

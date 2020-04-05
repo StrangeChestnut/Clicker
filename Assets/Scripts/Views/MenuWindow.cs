@@ -8,7 +8,7 @@ namespace Views
     {
         [SerializeField] private Text _nickname;
 
-        public string Nickname => _nickname.text;
+        public Text Nickname => _nickname;
 
         public event Action PlayEvent;
 
@@ -16,6 +16,5 @@ namespace Views
         {
             PlayEvent?.Invoke();
         }
-
     }
 }

@@ -22,6 +22,10 @@ namespace Objects
                 Update();
             }
         }
+
+        public string BestPlayer => _bestPlayer;
+        public int BestScore => _bestScore;
+
         public event Action<int> UpdateScore;
 
         public void Update()

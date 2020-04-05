@@ -14,25 +14,12 @@ namespace Views
         public void OnOpen(GameOverWindow view)
         {
             view.SetScore(_ui.Game.ScoreValue);
-            
-            view.RestartEvent += _ui.CloseGameOverWindow;
-            view.MenuEvent += _ui.CloseGameOverWindow;
-            view.RestartEvent += _ui.OpenGame;
-            view.MenuEvent += _ui.OpenMenu;
-            
             view.RestartEvent += OnRestart;
-
         }
 
         public void OnClose(GameOverWindow view)
         {
-            view.RestartEvent -= _ui.CloseGameOverWindow;
-            view.MenuEvent -= _ui.CloseGameOverWindow;
-            view.RestartEvent -= _ui.OpenGame;
-            view.MenuEvent -= _ui.OpenMenu;
-            
             view.RestartEvent -= OnRestart;
-
         }
 
         private void OnRestart()
