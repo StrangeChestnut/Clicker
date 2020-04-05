@@ -4,6 +4,6 @@ namespace Views
 {
     public class GameWindow : View
     {
-        [SerializeField] public ScoreWindow scoreWindow;
+        [SerializeField] public HudWindow hudWindow;
     }
 }

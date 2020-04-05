@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
+	[SerializeField] private GameController _game;
 	[SerializeField] private GameObject _prefab;
 	
 	[SerializeField] private float _spawnInterval;
@@ -12,23 +13,39 @@ public class Spawner : MonoBehaviour
 	[SerializeField] private float _fromPosition;
 	[SerializeField] private float _toPosition;
 
-	private float _timer;
+	private IEnumerator _spawner;
 	
-	public void StopSpawn()
+	public void Awake()
 	{
-		enabled = false;
+		_game.StartEvent += OnStartGame;
+		_game.StopEvent += OnStopGame;
 	}
 
-	private void Update()
+	private void OnStartGame()
 	{
-		_timer -= Time.fixedDeltaTime;
+		_spawner = SpawnCoroutine();
+		StartCoroutine(_spawner);
+	}
+	
+	private void OnStopGame()
+	{
+		StopCoroutine(_spawner);
+		_spawner = null;
+	}
 
-		if (_timer > 0)
-			return;
-
-		_timer += _spawnInterval;
+	private void Spawn()
+	{
 		var position = transform.position;
 		position.x += Random.Range(_fromPosition, _toPosition);
 		Instantiate(_prefab, position, Quaternion.identity);
+	}
+
+	IEnumerator SpawnCoroutine()
+	{
+		for (float timer = 0; timer < _game.Duration; timer += _spawnInterval)
+		{
+			Spawn();
+			yield return new WaitForSeconds(_spawnInterval);
+		}
 	}
 }

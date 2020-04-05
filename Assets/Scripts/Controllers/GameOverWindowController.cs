@@ -13,7 +13,7 @@ namespace Views
         
         public void OnOpen(GameOverWindow view)
         {
-            view.SetScore(_ui.Game.Count);
+            view.SetScore(_ui.Game.ScoreValue);
             
             view.RestartEvent += _ui.CloseGameOverWindow;
             view.MenuEvent += _ui.CloseGameOverWindow;

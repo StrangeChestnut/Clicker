@@ -1,47 +1,38 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+using Objects;
 using UnityEngine;
 
-public class GameController : ScriptableObject
+public class GameController : MonoBehaviour
 {
-    [SerializeField] private int _count;
+    [SerializeField] private ScoreScriptableObject _score;
+    [SerializeField] private Timer _timer;
+    
     [SerializeField] private bool _resetOnNewGame = true;
-    public int Count => _count;
+    [SerializeField] private int _gameDuration;
 
-    public event Action<int> UpdateScore;
-    public event Action GameOver;
+    public Timer Timer => _timer;
+    public ScoreScriptableObject Score => _score;
+    
+    public int ScoreValue => _score.Value;
+    public int Duration => _gameDuration;
 
+    public event Action StartEvent;
+    public event Action StopEvent;
+    
     public void StartGame()
     {
         if (_resetOnNewGame)
         {
-            _count = 0;
+            _score.Value = 0;
         }
-        UpdateScore?.Invoke(_count);
+
+        _score.Update();
+        StartEvent?.Invoke();
     }
     
     public void StopGame()
     {
-        GameOver?.Invoke();
+        StopEvent?.Invoke();
     }
-
-    public void AddValue(int count)
-    {
-        _count += count;
-        UpdateScore?.Invoke(_count);
-    }
-
-#if UNITY_EDITOR
-    [MenuItem("Assets/Create/Score")]
-    public static void CreateMyAsset()
-    {
-        GameController asset = CreateInstance<GameController>();
-        AssetDatabase.CreateAsset(asset, "Assets/Counters/Score.asset");
-        AssetDatabase.SaveAssets();
-        EditorUtility.FocusProjectWindow();
-        Selection.activeObject = asset;
-    }
-#endif
 }
