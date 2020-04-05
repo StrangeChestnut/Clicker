@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Score
   m_EditorClassIdentifier: 
   _bestPlayer: 
-  _bestScore: 0
-  _value: 0
+  _bestScore: 50
+  _currentScore: 50
