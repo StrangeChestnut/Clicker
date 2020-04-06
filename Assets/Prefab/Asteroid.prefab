@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9096241777886267378}
   - component: {fileID: 7863161627164916517}
   - component: {fileID: 524459798470352916}
+  - component: {fileID: 7147964372326997416}
   m_Layer: 0
   m_Name: Asteroid
   m_TagString: Untagged
@@ -164,3 +165,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97bf0fd7d104b668e64372ee9db0091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DestroyAnimator: {fileID: 7147964372326997416}
+--- !u!95 &7147964372326997416
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182607131209693702}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 85746c33d8cfb0d43b8e9b44a6754693, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
